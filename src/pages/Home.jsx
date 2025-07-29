@@ -11,22 +11,21 @@ export default function Home() {
   }, [search]);
 
   return (
-    <div className="p-4 max-w-screen-lg mx-auto">
+    <div className="container">
       <input
         type="text"
         placeholder="Buscar película..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className="w-full p-2 rounded-md border border-gray-300 mb-4"
       />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid">
         {movies.length ? (
           movies.map((movie) => (
-            <MovieCard key={movie.id} movie={movie} />
+            <MovieCard key={movie.imdbID} movie={movie} />
           ))
         ) : (
-          <p className="text-center col-span-full">No se encontraron resultados</p>
+          <p>No se encontraron resultados</p>
         )}
       </div>
     </div>
