@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import MovieCard from "../components/MovieCard";
-import { fetchMovies } from "../services/api";
+import { searchMovies } from "../services/api";
+
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("batman");
 
   useEffect(() => {
-    fetchMovies(search).then(setMovies);
+    searchMovies(search).then(setMovies);
   }, [search]);
 
   return (

@@ -1,13 +1,16 @@
+import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
+import MovieDetail from "./pages/MovieDetail";
 
 function App() {
   return (
-    <div className="bg-gray-100 min-h-screen">
-      <header className="bg-purple-600 text-white text-center p-4 text-xl font-bold">
-        🎬 Movie App
-      </header>
-      <Home />
-    </div>
+    <>
+      <header>🎬 Movie App</header>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movie/:id" element={<MovieDetail />} />
+      </Routes>
+    </>
   );
 }
 
